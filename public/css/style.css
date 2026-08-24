@@ -196,10 +196,10 @@ button, input, select, textarea {
   transition: var(--transition);
 }
 
-body:not([data-page="home"]) .navbar,
-body:not([data-page="home"]) #main-navbar,
-body:not([data-page="home"]) .footer,
-body:not([data-page="home"]) footer {
+body[data-page="admin"] .navbar,
+body[data-page="admin"] #main-navbar,
+body[data-page="admin-product-edit"] .navbar,
+body[data-page="admin-product-edit"] #main-navbar {
   display: none !important;
 }
 
