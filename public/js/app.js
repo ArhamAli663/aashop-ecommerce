@@ -4307,6 +4307,37 @@ async function processVisualImage(base64Data, sourceLabel) {
   }
 }
 
+function setCurrency(curr) {
+  if (!CURRENCIES[curr]) curr = 'PKR';
+  state.currency = curr;
+  localStorage.setItem('aashop_currency', curr);
+  const cfg = CURRENCIES[curr];
+
+  // Update Header Currency Display
+  const textEl = document.getElementById('selected-currency-text');
+  const flagEl = document.getElementById('selected-currency-flag');
+  if (textEl) textEl.textContent = curr;
+  if (flagEl) flagEl.textContent = cfg.flag;
+
+  // Update Hero Price dynamically
+  const heroCur = document.getElementById('hero-price-current');
+  const heroOrig = document.getElementById('hero-price-original');
+  if (heroCur) heroCur.textContent = formatMoney(1199);
+  if (heroOrig) heroOrig.textContent = formatMoney(1349);
+
+  // Re-render active views
+  if (state.currentPage === 'home') renderProducts(state.products);
+  else if (state.currentPage === 'cart') renderCartPage();
+  else if (state.currentPage === 'wishlist') renderWishlistPage();
+  else if (state.currentPage === 'checkout') renderCheckoutPage();
+  else if (state.currentPage === 'product-detail' && state.currentProductId) {
+    const prod = state.products.find(p => p.id === state.currentProductId);
+    if (prod) renderProductDetailPage(prod);
+  }
+
+  showToast(`Currency switched to ${cfg.name} (${cfg.symbol.trim()})`, 'info');
+}
+
 /* ==========================================================================
    EVENT LISTENERS
    ========================================================================== */
