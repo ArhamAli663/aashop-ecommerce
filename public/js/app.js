@@ -1143,6 +1143,79 @@ function syncHeaderUserButton() {
   }
 }
 
+// Notification Dropdown and Badge Handlers
+function toggleNotificationsDropdown() {
+  const menu = document.getElementById('notifications-dropdown-menu');
+  const badge = document.getElementById('notifications-unread-badge');
+  if (!menu) return;
+
+  const isHidden = menu.classList.contains('hidden');
+  if (isHidden) {
+    menu.classList.remove('hidden');
+    // Clear notification badge
+    if (badge) {
+      badge.style.display = 'none';
+      localStorage.setItem('aashop_notifs_read', 'true');
+    }
+    renderStoreAnnouncements();
+  } else {
+    menu.classList.add('hidden');
+  }
+}
+
+function markAllNotificationsRead() {
+  const badge = document.getElementById('notifications-unread-badge');
+  if (badge) badge.style.display = 'none';
+  localStorage.setItem('aashop_notifs_read', 'true');
+  const list = document.getElementById('notif-items-list');
+  if (list) {
+    list.innerHTML = `<div style="padding: 12px; text-align: center; color: var(--text-muted); font-size: 0.82rem;">All announcements marked as read.</div>`;
+  }
+  showToast('All notifications marked as read', 'info');
+}
+
+function renderStoreAnnouncements() {
+  const list = document.getElementById('notif-items-list');
+  if (!list) return;
+  list.innerHTML = `
+    <div style="padding: 10px; border-bottom: 1px solid var(--border-subtle); display: flex; gap: 10px; align-items: flex-start;">
+      <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(255, 71, 87, 0.15); color: #ff4757; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <i class="fa-solid fa-truck-fast"></i>
+      </div>
+      <div>
+        <strong style="font-size: 0.85rem; color: var(--text-primary); display: block;">Free Nationwide Delivery Active</strong>
+        <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 2px;">Enjoy FREE standard delivery on all orders across Pakistan this week!</p>
+        <small style="font-size: 0.7rem; color: var(--text-muted);">Just now</small>
+      </div>
+    </div>
+    <div style="padding: 10px; display: flex; gap: 10px; align-items: flex-start;">
+      <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(37, 211, 102, 0.15); color: #25d366; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <i class="fa-solid fa-shield-check"></i>
+      </div>
+      <div>
+        <strong style="font-size: 0.85rem; color: var(--text-primary); display: block;">Easypaisa & JazzCash Verified</strong>
+        <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 2px;">Direct 0% fee mobile account payments active with instant confirmation.</p>
+        <small style="font-size: 0.7rem; color: var(--text-muted);">Today</small>
+      </div>
+    </div>
+  `;
+}
+
+// Close notification dropdown when clicking outside
+document.addEventListener('click', (e) => {
+  const wrap = document.getElementById('notifications-dropdown-wrap');
+  const menu = document.getElementById('notifications-dropdown-menu');
+  if (wrap && menu && !wrap.contains(e.target)) {
+    menu.classList.add('hidden');
+  }
+});
+
+// Check if notifications were already read
+if (localStorage.getItem('aashop_notifs_read') === 'true') {
+  const badge = document.getElementById('notifications-unread-badge');
+  if (badge) badge.style.display = 'none';
+}
+
 // Initialize theme immediately on load
 initTheme();
 

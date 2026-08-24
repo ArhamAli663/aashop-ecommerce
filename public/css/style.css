@@ -6357,45 +6357,354 @@ body[data-page="admin-product-edit"] .daraz-category-nav,
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.06) !important;
 }
 
-[data-theme="light"] .bottom-nav-item {
+/* ==========================================================================
+   WISHLIST HEART BUTTON & BOTTOM NAVIGATION BADGE STYLING
+   ========================================================================== */
+.card-wishlist-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 50%;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  z-index: 5;
+}
+
+.card-wishlist-btn:hover,
+.card-wishlist-btn.active {
+  color: #ff4757 !important;
+  transform: scale(1.15);
+  background: rgba(15, 23, 42, 0.9);
+}
+
+[data-theme="light"] .card-wishlist-btn {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #64748b !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12) !important;
+}
+
+[data-theme="light"] .card-wishlist-btn:hover,
+[data-theme="light"] .card-wishlist-btn.active {
+  color: #ff4757 !important;
+  background: #fff1f2 !important;
+  border-color: #fecdd3 !important;
+}
+
+.bottom-icon-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-badge {
+  position: absolute;
+  top: -7px;
+  right: -9px;
+  background: #ff4757 !important;
+  color: #ffffff !important;
+  font-size: 0.65rem !important;
+  font-weight: 800 !important;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(255, 71, 87, 0.4);
+  line-height: 1;
+}
+
+[data-theme="dark"] .bottom-badge {
+  border-color: #0f172a !important;
+}
+
+/* ==========================================================================
+   AI CUSTOMER SUPPORT CHAT ENGINE STYLES
+   ========================================================================== */
+.ai-support-chat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+}
+
+.ai-chat-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: rgba(255, 71, 87, 0.08);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.ai-bot-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ff4757, #ff6b81);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  box-shadow: 0 4px 12px rgba(255, 71, 87, 0.35);
+}
+
+.ai-bot-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ai-sparkle-badge {
+  background: rgba(99, 102, 241, 0.2);
+  color: #818cf8;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.ai-chat-messages-container {
+  height: 380px;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="light"] .ai-chat-messages-container {
+  background: #f8fafc !important;
+}
+
+.ai-msg-bubble {
+  display: flex;
+  gap: 12px;
+  max-width: 85%;
+  animation: fadeIn 0.25s ease;
+}
+
+.ai-msg-bubble.bot {
+  align-self: flex-start;
+}
+
+.ai-msg-bubble.user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.ai-msg-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff4757, #ff6b81);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.ai-msg-body {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 12px 16px;
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.ai-msg-bubble.user .ai-msg-body {
+  background: linear-gradient(135deg, #ff4757, #ff6b81);
+  color: #ffffff;
+  border-color: transparent;
+}
+
+[data-theme="light"] .ai-msg-bubble.bot .ai-msg-body {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
+}
+
+.ai-quick-prompts-row {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid var(--border-subtle);
+}
+
+[data-theme="light"] .ai-quick-prompts-row {
+  background: #f1f5f9 !important;
+  border-top: 1px solid #e2e8f0 !important;
+}
+
+.ai-prompt-chip {
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.ai-prompt-chip:hover {
+  background: rgba(255, 71, 87, 0.15);
+  border-color: #ff4757;
+  color: #ff4757;
+}
+
+[data-theme="light"] .ai-prompt-chip {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+.ai-chat-input-row {
+  display: flex;
+  gap: 10px;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.ai-chat-input-row input {
+  flex: 1;
+  background: var(--bg-input);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: 10px 18px;
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  outline: none;
+}
+
+.ai-chat-input-row input:focus {
+  border-color: #ff4757;
+}
+
+[data-theme="light"] .ai-chat-input-row input {
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+/* ==========================================================================
+   ADMIN PORTAL LIGHT THEME COMPLETE COMPLIANCE
+   ========================================================================== */
+[data-theme="light"] .admin-portal-wrapper,
+[data-theme="light"] .admin-portal-page,
+[data-theme="light"] .admin-view-tab {
+  background: #f8fafc !important;
+}
+
+[data-theme="light"] .admin-tabs-nav {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05) !important;
+}
+
+[data-theme="light"] .admin-tab-btn {
   color: #64748b !important;
 }
 
-[data-theme="light"] .bottom-nav-item.active {
-  color: #ff4757 !important;
+[data-theme="light"] .admin-tab-btn:hover {
+  background: #f1f5f9 !important;
+  color: #0f172a !important;
 }
 
-[data-theme="light"] .currency-dropdown,
-[data-theme="light"] .notifications-dropdown-menu {
+[data-theme="light"] .admin-tab-btn.active {
+  background: #ff4757 !important;
+  color: #ffffff !important;
+}
+
+[data-theme="light"] .admin-stat-card,
+[data-theme="light"] .admin-order-card,
+[data-theme="light"] .admin-product-card,
+[data-theme="light"] .admin-search-filter-card {
   background: #ffffff !important;
-  border-color: #e2e8f0 !important;
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15) !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05) !important;
+  color: #0f172a !important;
 }
 
-[data-theme="light"] .currency-item:hover {
-  background: #f1f5f9;
+[data-theme="light"] .admin-search-input {
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
 }
 
-[data-theme="light"] .top-announcement {
-  background: linear-gradient(90deg, #fff1f2 0%, #fef2f2 100%);
-  border-bottom: 1px solid #fecdd3;
-  color: #9f1239;
+[data-theme="light"] .admin-filter-pill {
+  background: #f1f5f9 !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #475569 !important;
 }
 
-[data-theme="light"] .receipt-paper-body {
-  background: #ffffff;
-  color: #0f172a;
+[data-theme="light"] .admin-filter-pill.active {
+  background: #ff4757 !important;
+  color: #ffffff !important;
 }
 
-[data-theme="light"] .admin-ai-verify-bar {
+[data-theme="light"] .admin-order-badge-num,
+[data-theme="light"] .admin-customer-name {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .admin-order-items-preview {
   background: #f8fafc !important;
-  border-color: #e2e8f0 !important;
+  border: 1px solid #e2e8f0 !important;
 }
 
-[data-theme="light"] .pin-digit-input {
-  background: #f1f5f9;
-  border-color: #cbd5e1;
-  color: #0f172a;
+[data-theme="light"] .admin-mini-item {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .admin-status-dropdown {
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .header-avatar-circle {
+  background: linear-gradient(135deg, #ff4757, #ff6b81) !important;
+  color: #ffffff !important;
+}
+
+[data-theme="light"] .user-avatar-btn {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
 }
 
 /* Active Theme Card Highlight */
