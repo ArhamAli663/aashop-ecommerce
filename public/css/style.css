@@ -6245,6 +6245,22 @@ body[data-page="admin-product-edit"] .daraz-category-nav,
 [data-theme="light"] .service-meta h4,
 [data-theme="light"] .editor-section-title,
 [data-theme="light"] .flash-title-wrap h3,
+[data-theme="light"] .subpage-back-header h1,
+[data-theme="light"] .subpage-back-header h2,
+[data-theme="light"] .subpage-back-header h3,
+[data-theme="light"] .page-content-container h1,
+[data-theme="light"] .page-content-container h2,
+[data-theme="light"] .page-content-container h3,
+[data-theme="light"] .page-content-container h4,
+[data-theme="light"] .page-view h1,
+[data-theme="light"] .page-view h2,
+[data-theme="light"] .page-view h3,
+[data-theme="light"] .page-view h4,
+[data-theme="light"] .account-page-card h4,
+[data-theme="light"] .account-page-card h5,
+[data-theme="light"] .faq-accordion-header,
+[data-theme="light"] .faq-item-title,
+[data-theme="light"] .faq-accordion-item button,
 [data-theme="light"] h1,
 [data-theme="light"] h2,
 [data-theme="light"] h3,
@@ -6252,10 +6268,22 @@ body[data-page="admin-product-edit"] .daraz-category-nav,
 [data-theme="light"] h5,
 [data-theme="light"] h6 {
   color: #0f172a !important;
+  -webkit-text-fill-color: initial !important;
+  background: none !important;
+}
+
+[data-theme="light"] .faq-accordion-item,
+[data-theme="light"] .faq-item-card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
 }
 
 [data-theme="light"] .section-subtitle,
-[data-theme="light"] .control-group {
+[data-theme="light"] .control-group,
+[data-theme="light"] .subpage-back-header p,
+[data-theme="light"] .page-content-container p,
+[data-theme="light"] .page-view p {
   color: #475569 !important;
 }
 
