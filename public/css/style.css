@@ -6198,10 +6198,10 @@ body[data-page="admin-product-edit"] .daraz-category-nav,
   color: #0f172a !important;
 }
 
-[data-theme="light"] .hero-banner {
+[data-theme="light"] .hero-banner,
+[data-theme="light"] .hero-section {
   background: linear-gradient(135deg, #ffffff 0%, #fff1f2 60%, #fef2f2 100%) !important;
-  border: 1px solid #fecdd3 !important;
-  box-shadow: 0 8px 30px rgba(255, 71, 87, 0.08) !important;
+  border-bottom: 1px solid #fecdd3 !important;
 }
 
 [data-theme="light"] .hero-title,
@@ -6209,8 +6209,31 @@ body[data-page="admin-product-edit"] .daraz-category-nav,
   color: #0f172a !important;
 }
 
+[data-theme="light"] .hero-subtext-glow {
+  color: #1e293b !important;
+  font-weight: 800 !important;
+}
+
+[data-theme="light"] .hero-subtitle,
 [data-theme="light"] .hero-description {
-  color: #475569 !important;
+  color: #334155 !important;
+  font-weight: 500 !important;
+}
+
+[data-theme="light"] .hero-tag {
+  background: rgba(255, 71, 87, 0.12) !important;
+  color: #e11d48 !important;
+  border-color: #fecdd3 !important;
+}
+
+[data-theme="light"] .hero-card-glow {
+  display: none !important;
+}
+
+[data-theme="light"] .hero-banner-card {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08) !important;
 }
 
 [data-theme="light"] .card-title,
