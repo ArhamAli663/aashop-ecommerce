@@ -4075,7 +4075,9 @@ function updateAuthUI() {
       }
     }
   } else {
-    elements.authBtnText.textContent = 'Sign In';
+    if (elements.authBtnText) {
+      elements.authBtnText.textContent = 'Sign In / Sign Up';
+    }
     if (elements.headerUserAvatar) {
       elements.headerUserAvatar.innerHTML = '<i class="fa-regular fa-user"></i>';
     }
