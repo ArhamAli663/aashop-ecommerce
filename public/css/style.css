@@ -6182,67 +6182,124 @@ body[data-page="admin-product-edit"] .daraz-category-nav,
 [data-theme="light"] .admin-product-card,
 [data-theme="light"] .receipt-paper-body,
 [data-theme="light"] .cart-summary-card,
-[data-theme="light"] .order-card-item {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+[data-theme="light"] .order-card-item,
+[data-theme="light"] .product-card,
+[data-theme="light"] .cart-item,
+[data-theme="light"] .cart-item-card,
+[data-theme="light"] .auth-page-card,
+[data-theme="light"] .checkout-fields-card,
+[data-theme="light"] .checkout-review-card,
+[data-theme="light"] .product-detail-page-card,
+[data-theme="light"] .admin-account-info-box,
+[data-theme="light"] .admin-order-card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .hero-banner {
+  background: linear-gradient(135deg, #ffffff 0%, #fff1f2 60%, #fef2f2 100%) !important;
+  border: 1px solid #fecdd3 !important;
+  box-shadow: 0 8px 30px rgba(255, 71, 87, 0.08) !important;
+}
+
+[data-theme="light"] .hero-title,
+[data-theme="light"] .hero-title strong {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .hero-description {
+  color: #475569 !important;
 }
 
 [data-theme="light"] .card-title,
+[data-theme="light"] .product-card-title,
+[data-theme="light"] .admin-product-title,
+[data-theme="light"] .cart-item-title,
 [data-theme="light"] .section-title,
 [data-theme="light"] .page-title,
+[data-theme="light"] .service-meta h4,
+[data-theme="light"] .editor-section-title,
 [data-theme="light"] h1,
 [data-theme="light"] h2,
 [data-theme="light"] h3,
 [data-theme="light"] h4,
-[data-theme="light"] h5 {
-  color: #0f172a;
-}
-
-[data-theme="light"] .text-white {
+[data-theme="light"] h5,
+[data-theme="light"] h6 {
   color: #0f172a !important;
 }
 
+[data-theme="light"] .text-white,
+[data-theme="light"] .text-light {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .text-muted,
+[data-theme="light"] .service-meta p,
+[data-theme="light"] .account-subtext,
+[data-theme="light"] .admin-product-card .text-muted {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .card-price,
+[data-theme="light"] .product-card-price,
+[data-theme="light"] .price-current,
+[data-theme="light"] .cart-item-price {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .form-group label,
+[data-theme="light"] label {
+  color: #1e293b !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="light"] .form-control,
 [data-theme="light"] .form-control-custom,
 [data-theme="light"] input[type="text"],
 [data-theme="light"] input[type="email"],
 [data-theme="light"] input[type="password"],
 [data-theme="light"] input[type="tel"],
+[data-theme="light"] input[type="number"],
 [data-theme="light"] select,
 [data-theme="light"] textarea {
-  background: #ffffff;
-  border: 1.5px solid #cbd5e1;
-  color: #0f172a;
+  background: #ffffff !important;
+  border: 1.5px solid #cbd5e1 !important;
+  color: #0f172a !important;
 }
 
 [data-theme="light"] .form-control-custom:focus,
 [data-theme="light"] input:focus,
 [data-theme="light"] select:focus,
 [data-theme="light"] textarea:focus {
-  border-color: #ff4757;
-  background: #ffffff;
-  box-shadow: 0 0 0 3px rgba(255, 71, 87, 0.15);
+  border-color: #ff4757 !important;
+  background: #ffffff !important;
+  box-shadow: 0 0 0 3px rgba(255, 71, 87, 0.15) !important;
 }
 
-[data-theme="light"] .modal {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  color: #0f172a;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+[data-theme="light"] .modal-card,
+[data-theme="light"] .modal-box,
+[data-theme="light"] .gateway-modal-box,
+[data-theme="light"] .delete-modal-card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
 }
 
 [data-theme="light"] .app-bottom-nav {
-  background: rgba(255, 255, 255, 0.96);
-  border-top: 1px solid #e2e8f0;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-top: 1px solid #e2e8f0 !important;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.06) !important;
 }
 
 [data-theme="light"] .bottom-nav-item {
-  color: #64748b;
+  color: #64748b !important;
 }
 
 [data-theme="light"] .bottom-nav-item.active {
-  color: #ff4757;
+  color: #ff4757 !important;
 }
 
 [data-theme="light"] .currency-dropdown,

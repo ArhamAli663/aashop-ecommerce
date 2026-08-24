@@ -1096,11 +1096,56 @@ function toggleTheme() {
   setTheme(next, true);
 }
 
+// Handler for top right Header "Sign In / Sign Up / Account" button
+function handleHeaderAccountClick() {
+  const user = state.currentUser || JSON.parse(localStorage.getItem('aashop_user') || 'null');
+  const token = state.token || localStorage.getItem('aashop_token');
+
+  if (user && token) {
+    if (user.role === 'admin') {
+      navigateTo('admin');
+    } else {
+      navigateTo('account');
+    }
+  } else {
+    navigateTo('auth');
+  }
+}
+
+// Synchronize Header User Avatar and Text based on auth status
+function syncHeaderUserButton() {
+  const user = state.currentUser || JSON.parse(localStorage.getItem('aashop_user') || 'null');
+  const token = state.token || localStorage.getItem('aashop_token');
+  const textEl = document.getElementById('auth-btn-text');
+  const avatarEl = document.getElementById('header-user-avatar');
+  const btnEl = document.getElementById('nav-account-btn');
+
+  if (user && token) {
+    if (textEl) textEl.textContent = user.name || (user.role === 'admin' ? 'Admin' : 'My Account');
+    if (avatarEl) {
+      if (user.avatar_url) {
+        avatarEl.innerHTML = `<img src="${user.avatar_url}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="${user.name}" />`;
+      } else if (user.role === 'admin') {
+        avatarEl.innerHTML = `<i class="fa-solid fa-crown text-warning"></i>`;
+      } else {
+        const initial = (user.name || 'U').charAt(0).toUpperCase();
+        avatarEl.innerHTML = `<span style="font-weight:800;">${initial}</span>`;
+      }
+    }
+    if (btnEl) btnEl.title = user.role === 'admin' ? 'Admin Dashboard' : 'My Account';
+  } else {
+    if (textEl) textEl.textContent = 'Sign In / Sign Up';
+    if (avatarEl) avatarEl.innerHTML = `<i class="fa-regular fa-user"></i>`;
+    if (btnEl) btnEl.title = 'Sign In / Sign Up';
+  }
+}
+
 // Initialize theme immediately on load
 initTheme();
 
 // Initial sync
 syncDynamicStoreConfig();
+syncHeaderUserButton();
 
 async function fetchAdminStats() {
   const token = state.token || localStorage.getItem('aashop_token');
