@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bagGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff3838" />
+      <stop offset="100%" stop-color="#ff793f" />
+    </linearGradient>
+    <linearGradient id="handleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffb142" />
+      <stop offset="100%" stop-color="#ff5252" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Rounded Base Background -->
+  <rect width="64" height="64" rx="16" fill="#111827" />
+  
+  <!-- Shopping Bag Handle -->
+  <path d="M24 24 V16 C24 11.5 27.5 8 32 8 C36.5 8 40 11.5 40 16 V24" 
+        fill="none" 
+        stroke="url(#handleGrad)" 
+        stroke-width="4.5" 
+        stroke-linecap="round" />
+        
+  <!-- Shopping Bag Body -->
+  <path d="M14 22 L17.5 54 C17.8 56.5 19.8 58 22 58 H42 C44.2 58 46.2 56.5 46.5 54 L50 22 C50.3 19.5 48.5 18 46 18 H18 C15.5 18 13.7 19.5 14 22 Z" 
+        fill="url(#bagGrad)" />
+        
+  <!-- Front Fold Highlight -->
+  <path d="M17 26 Q32 35 47 26 L45.5 48 Q32 53 18.5 48 Z" 
+        fill="rgba(0, 0, 0, 0.15)" />
+        
+  <!-- "AA" Text Monogram -->
+  <text x="32" y="44" 
+        font-family="system-ui, -apple-system, sans-serif" 
+        font-size="16" 
+        font-weight="900" 
+        letter-spacing="1" 
+        fill="#ffffff" 
+        text-anchor="middle">AA</text>
+        
+  <!-- Small Star Sparkle -->
+  <polygon points="49,12 51,16 55,17 51,19 49,23 48,19 44,17 48,16" fill="#fffa65" />
+</svg>
