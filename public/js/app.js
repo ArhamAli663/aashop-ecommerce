@@ -1065,6 +1065,9 @@ function initTheme() {
 function setTheme(theme, showToastMsg = true) {
   state.currentTheme = theme;
   document.documentElement.setAttribute('data-theme', theme);
+  if (document.body) {
+    document.body.setAttribute('data-theme', theme);
+  }
   localStorage.setItem('aashop_theme', theme);
 
   // Update Header Icon
